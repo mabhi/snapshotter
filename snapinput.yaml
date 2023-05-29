@@ -1,0 +1,8 @@
+apiVersion: mabhi.dev/v1
+kind: Snapinput
+metadata:
+  name: snap-01
+snapshotName: sample-snap
+sourcePersistentVolumeClaimName: mysql-pv-claim
+recoverRequired: false
+newPersistentVolumeClaimName: nothing
