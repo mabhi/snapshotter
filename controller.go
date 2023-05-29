@@ -64,7 +64,7 @@ func (c *controller) createSnapshot(obj interface{}) {
 	jsonObj := crObjWrapper.Object
 	//fmt.Println(jsonObj)
 	// take snapshot
-	if jsonObj["recoverRequired"] == false {
+	if jsonObj["shouldRecover"] == false {
 
 		snap := &unstructured.Unstructured{
 			Object: map[string]interface{}{
@@ -121,7 +121,7 @@ func (c *controller) createSnapshot(obj interface{}) {
 				},
 			},
 			ObjectMeta: metav1.ObjectMeta{
-				Name: jsonObj["newPersistentVolumeClaimName"].(string),
+				Name: jsonObj["destinationPersistentVolumeClaimName"].(string),
 			},
 		}, metav1.CreateOptions{})
 

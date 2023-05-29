@@ -21,11 +21,10 @@ spec:
               type: string
             sourcePersistentVolumeClaimName:
               type: string
-            recoverRequired:
+            shouldRecover:
               type: boolean    
-            newPersistentVolumeClaimName:
+            destinationPersistentVolumeClaimName:
               type: string  
-              
   # either Namespaced or Cluster
   scope: Cluster
   names:

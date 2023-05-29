@@ -4,5 +4,5 @@ metadata:
   name: snap-02
 snapshotName: sample-snap
 sourcePersistentVolumeClaimName: mysql-pv-claim
-recoverRequired: true
-newPersistentVolumeClaimName: dest-pvc-name
+shouldRecover: true
+destinationPersistentVolumeClaimName: dest-pvc-name
