@@ -97,10 +97,10 @@ func (c *controller) createSnapshot(obj interface{}) {
 		//do recovery
 		//creating pvc first
 		// var storageClassName *string
-		b := "csi-hostpath-sc"
-		storageClassName := &b
-		d := "snapshot.storage.k8s.io"
-		ApiGroup := &d
+		sc := "csi-hostpath-sc"
+		storageClassName := &sc
+		ag := "snapshot.storage.k8s.io"
+		ApiGroup := &ag
 		sourceSnapshotName := jsonObj["snapshotName"].(string)
 
 		pvc, err := c.clientset.CoreV1().PersistentVolumeClaims(TargetNamespace).Create(context.Background(), &v1.PersistentVolumeClaim{
